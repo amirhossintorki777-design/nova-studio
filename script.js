@@ -38,22 +38,3 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach((item) => item.classList.add("visible"));
 }
 
-const contactForm = document.querySelector(".contact-form");
-const formMessage = document.querySelector(".form-message");
-
-if (contactForm && formMessage) {
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    if (!contactForm.checkValidity()) {
-      formMessage.textContent = "Please complete all required fields.";
-      contactForm.reportValidity();
-      return;
-    }
-
-    formMessage.textContent =
-      "Your form is ready visually. Connect a form service before accepting real requests.";
-
-    contactForm.reset();
-  });
-}
